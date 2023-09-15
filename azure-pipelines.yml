@@ -5,27 +5,5 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo "Iniciando a construção do projeto..."
-  displayName: 'Iniciar Construção'
-
-- script: |
-    echo "Comandos para configurar o ambiente de construção (se necessário)"
-    echo "Exemplo: Instalar dependências, configurar variáveis de ambiente, etc."
-
-    echo "Comandos para construir o projeto"
-    echo "Exemplo: Para um projeto Python, pode ser algo como:"
-    echo "python -m venv venv"
-    echo "source venv/bin/activate"
-    echo "pip install -r requirements.txt"
-    echo "python setup.py build"
-  displayName: 'Construir Projeto'
-
-- script: echo "Conclusão da construção do projeto."
-  displayName: 'Concluir Construção'
-
-- script: |
-    echo "Teste deploy"
-    echo "Teste com alteração"
-    echo "Teste do futuro"
-    echo "Teste concluído com sucesso!"
-  displayName: 'Teste de Deploy'
+- script: echo "Hello, Azure DevOps!"
+  displayName: 'Print Message'
