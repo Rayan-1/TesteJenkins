@@ -2,17 +2,30 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo "teste deploy"
-  displayName: 'Teste Deploy'
+- script: echo "Iniciando a construção do projeto..."
+  displayName: 'Iniciar Construção'
 
-- script: echo "teste com alteração"
-  displayName: 'Teste com Alteração'
+- script: |
+    echo "Comandos para configurar o ambiente de construção (se necessário)"
+    echo "Exemplo: Instalar dependências, configurar variáveis de ambiente, etc."
 
-- script: echo "teste do futuro"
-  displayName: 'Teste do Futuro'
+    echo "Comandos para construir o projeto"
+    echo "Exemplo: Para um projeto Python, pode ser algo como:"
+    echo "python -m venv venv"
+    echo "source venv/bin/activate"
+    echo "pip install -r requirements.txt"
+    echo "python setup.py build"
+  displayName: 'Construir Projeto'
 
-- script: echo "teste concluído com sucesso!"
-  displayName: 'Teste Concluído com Sucesso'
+- script: echo "Conclusão da construção do projeto."
+  displayName: 'Concluir Construção'
+
+- script: |
+    echo "Teste deploy"
+    echo "Teste com alteração"
+    echo "Teste do futuro"
+    echo "Teste concluído com sucesso!"
+  displayName: 'Teste de Deploy'
