@@ -2,10 +2,10 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Iniciando a construção do projeto...
+- script: echo 'Iniciando a construção do projeto...'
   displayName: 'Iniciar Construção'
 
 - script: |
@@ -20,5 +20,5 @@ steps:
     python setup.py build
   displayName: 'Construir Projeto'
 
-- script: echo Conclusão da construção do projeto.
+- script: echo 'Conclusão da construção do projeto.'
   displayName: 'Concluir Construção'
