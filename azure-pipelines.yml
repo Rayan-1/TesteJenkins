@@ -4,25 +4,21 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-stages:
-- stage: Build
-  displayName: 'Build Stage'
-  jobs:
-  - job: BuildJob
-    displayName: 'Build Job'
-    steps:
-    - script: echo Executing build steps...
-      displayName: 'Build Step'
-    # Adicione aqui seus comandos de construção do projeto
+steps:
+- script: echo Iniciando a construção do projeto...
+  displayName: 'Iniciar Construção'
 
-- stage: Test
-  displayName: 'Test Stage'
-  jobs:
-  - job: TestJob
-    displayName: 'Test Job'
-    steps:
-    - script: echo Executing test steps...
-      displayName: 'Test Step'
-    # Adicione aqui seus comandos de teste do projeto
+- script: |
+    # Comandos para configurar o ambiente de construção (se necessário)
+    # Exemplo: Instalar dependências, configurar variáveis de ambiente, etc.
 
-# Adicione mais estágios conforme necessário para implantação, notificações, etc.
+    # Comandos para construir o projeto
+    # Exemplo: Para um projeto Python, pode ser algo como:
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python setup.py build
+  displayName: 'Construir Projeto'
+
+- script: echo Conclusão da construção do projeto.
+  displayName: 'Concluir Construção'
